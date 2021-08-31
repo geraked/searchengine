@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موتور جستجو</title>
+    <link rel='icon' href='favicon.ico'>
+
+    <link rel="stylesheet" href="bundle/boot.bundle.css">
+    <link rel="stylesheet" href="bundle/icon.bundle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="bg-light shadow-sm fixed-top">
+        <div class="container-fluid px-lg-5 py-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="search-form" class="row g-1">
+                        <div class="col">
+                            <input type="input" class="form-control" id="search-box" placeholder="چیزی بنویسید...">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-success" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" title="جستجو"><i class="fa fa-search"></i></button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" id="modal-btn" class="btn btn-outline-primary"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="نمایه‌سازی"><i
+                                    class="fas fa-list"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div id="pagination">
+                        <nav aria-label="pagination">
+                            <ul class="pagination pagination-sm flex-wrap mb-0 mt-1">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-fluid px-lg-5">
+        <div class="row mt-5 py-4">
+            <div class="col-lg-6">
+                <div class="mt-2">
+                    <p><small id="res-stat" class="text-muted"> </small></p>
+                </div>
+                <div id="results" class="row gy-3">
+                </div>
+            </div>
+            <!-- <div class="col-12">
+                <div id="pagination" class="mt-3">
+                    <nav aria-label="pagination">
+                        <ul class="pagination pagination-sm flex-wrap justify-content-center">
+                        </ul>
+                    </nav>
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="index-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">نمایه‌سازی</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="dir-select">دایرکتوری نمایه‌سازی</label>
+                        <select dir="ltr" id="dir-select" class="form-select" aria-label="Default select example">
+                            <option dir="rtl" value="0" selected>انتخاب کنید</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="index-prog">پیشرفت نمایه‌سازی</label>
+                        <div class="progress" dir="ltr">
+                            <div id="index-prog" class="progress-bar progress-bar-striped" role="progressbar"
+                                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0 %</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="write-prog">پیشرفت نوشتن در دیتابیس</label>
+                        <div class="progress" dir="ltr">
+                            <div id="write-prog" class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                                style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0 %</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <p>زمان صرف شده: <b id="time-txt" class="text-danger">0</b> ثانیه</p>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button id="startindex-btn" type="button" class="btn btn-primary">شروع</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="modal-hidden-btn" type="button" class="btn btn-primary d-none" data-bs-toggle="modal"
+        data-bs-target="#index-modal"> </button>
+
+    <script src="bundle/boot.bundle.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

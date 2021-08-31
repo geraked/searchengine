@@ -1,0 +1,40 @@
+{
+    "name": "searchengine",
+    "version": "1.0.0",
+    "description": "Implementation of a Small Search Engine",
+    "keywords": [
+        "search",
+        "engine",
+        "web",
+        "information",
+        "retrieval",
+        "yazd",
+        "university",
+        "undergraduate",
+        "course",
+        "bs",
+        "bachelor",
+        "science",
+        "computer",
+        "ce"
+    ],
+    "main": "main.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server/main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/geraked/searchengine.git"
+    },
+    "homepage": "https://github.com/geraked/searchengine",
+    "author": "Rabist (Geraked)",
+    "license": "MIT",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.10",
+        "express": "^4.17.1",
+        "mongodb": "^4.1.1",
+        "xmldom": "^0.6.0",
+        "xpath": "0.0.32"
+    }
+}
